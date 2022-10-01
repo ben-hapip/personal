@@ -95,6 +95,7 @@
   .mobileSocialContainer {
     margin-top: 40px;
     display: flex;
+
     width: 350px;
     justify-content: space-between;
   }
