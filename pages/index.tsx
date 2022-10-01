@@ -8,6 +8,7 @@ import { FileText, GitHub, Linkedin, Mail } from 'react-feather';
 import { ContactModal } from '../components/ContactModal/ContactModal';
 import meImage from '../public/me.png';
 import styles from '../styles/Home.module.css';
+
 const Home: NextPage = () => {
   const theme = useMantineTheme();
   const { width } = useViewportSize();
@@ -24,6 +25,10 @@ const Home: NextPage = () => {
   const goToGitHub = () => {
     window.open('https://github.com/ben-hapip', '_blank');
   };
+
+  const goToPDF = ()=> {
+    window.open('https://bhapip.vercel.app/resume.pdf', '_blank');
+  }
   return (
     <div
       className={styles.container}
@@ -96,7 +101,7 @@ const Home: NextPage = () => {
                 <div onClick={() => setShowModal(true)}>
                   <Mail width="34" height="34" />
                 </div>
-                <div title="Download my resume">
+                <div title="Download my resume" onClick={goToPDF}>
                   <FileText width="34" height="34" />
                 </div>
               </div>
