@@ -63,6 +63,7 @@
     display: flex;
     margin-top: 20px;
     align-items: center;
+    height: 100%
   }
 
   .homeSection {
