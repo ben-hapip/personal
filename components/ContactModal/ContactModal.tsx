@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styles from './ContactModal.module.css';
 export const ContactModal = ({ onClose }: { onClose: any }) => {
   const [opened, setOpened] = useState(true);
+  
   const [isEmailValid, setIsEmailValid] = useState(true);
   return (
     <>
