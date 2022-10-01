@@ -2,6 +2,7 @@ import { MantineProvider } from '@mantine/core';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
@@ -16,8 +17,15 @@ export default function App(props: AppProps) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
+          colorScheme: 'dark',
           /** Put your mantine theme override here */
-          colorScheme: 'light',
+          colors: {
+            ben: ['#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b', ],
+            lightBen: ['#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d'],
+            white: ['#efeff0']
+          },
+          primaryColor: 'ben',
+          fontFamily: 'Consolas',
         }}
       >
         <Component {...pageProps} />
