@@ -22,7 +22,7 @@
 
 .meImage {
   border-radius: 10%;
-  /* filter: brightness(99%) contrast(143%) hue-rotate(193deg) saturate(5%) invert(12%) url(#svgTint); */
+  filter: brightness(99%) contrast(143%) hue-rotate(193deg) saturate(5%) invert(12%) url(#svgTint);
 }
 
 .meImage:hover {
