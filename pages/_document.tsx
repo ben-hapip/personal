@@ -10,7 +10,7 @@ export default class _Document extends Document {
     return (
       <Html>
         <Head />
-        <body>
+        <body style={{backgroundColor:'#001914'}}>
         <svg xmlns="http://www.w3.org/2000/svg%22%3E" style={{visibility:'hidden', display:'none'}}>
             <filter id="svgTint">
               <feColorMatrix

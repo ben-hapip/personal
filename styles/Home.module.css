@@ -4,7 +4,8 @@
 
 .mainContainer {
   display: grid;
-  grid-template-columns: 1fr .75fr;
+  grid-template-columns: 1.5fr 0.75fr;
+  align-items: center;
   height: 100vh;
   justify-content: center;
 }
@@ -21,8 +22,7 @@
 
 .meImage {
   border-radius: 10%;
-  filter: brightness(99%) contrast(143%) hue-rotate(193deg) saturate(5%) invert(12%) url(#svgTint);
-  /* filter: grayscale(.5); */
+  /* filter: brightness(99%) contrast(143%) hue-rotate(193deg) saturate(5%) invert(12%) url(#svgTint); */
 }
 
 .meImage:hover {
@@ -34,35 +34,80 @@
   max-width: 900px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
 }
 
 .buttonContainer {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 20px;
+}
+
+.buttonContainer>div {
+  color: #49b96d;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+.buttonContainer>div:hover {
+  cursor: pointer;
+  color: #00643b;
 }
 
 .buttonContainer>button:hover {
   background-color: #00643b;
-
 }
 
 @media (max-width: 600px) {
   .mainContainer {
     display: flex;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .homeSection {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
   .aboutMe {
-    font-size: 55px;
+    font-size: 50px;
     font-weight: 900;
     font-family: 'Helvetica';
-
   }
 
   .container {
     padding: 0 2rem;
+  }
+
+  .mobileButtonContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .mobileButtonContainer>button:hover {
+    background-color: #00643b;
+  }
+
+  .mobileSocialContainer {
+    margin-top: 20px;
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+  }
+
+  .mobileSocialContainer>div {
+    color: #49b96d;
+    font-weight: 900;
+    margin-left: 10px;
+  }
+
+  .mobileSocialContainer>div:hover {
+    cursor: pointer;
+    color: #00643b;
   }
 }
