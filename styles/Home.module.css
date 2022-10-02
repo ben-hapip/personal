@@ -58,6 +58,15 @@
   background-color: #00643b;
 }
 
+.projectContainer {
+  margin-top: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  margin-bottom: 100px
+}
+
 @media (max-width: 600px) {
   .mainContainer {
     display: flex;
@@ -110,5 +119,15 @@
   .mobileSocialContainer>div:hover {
     cursor: pointer;
     color: #00643b;
+  }
+
+  .projectContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projectContainer>div {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }

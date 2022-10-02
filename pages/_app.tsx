@@ -22,7 +22,7 @@ export default function App(props: AppProps) {
           colors: {
             ben: ['#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b','#00643b', ],
             lightBen: ['#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d','#49b96d'],
-            white: ['#efeff0'],
+            greylol: ['#efeff0'],
             background: ['#001914']
           },
           primaryColor: 'ben',

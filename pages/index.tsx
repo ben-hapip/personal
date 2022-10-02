@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { FileText, GitHub, Linkedin, Mail } from 'react-feather';
 import { ContactModal } from '../components/ContactModal/ContactModal';
+import { PortfolioSection } from '../components/PortfolioSection/PortfolioSection';
+
 import meImage from '../public/me.png';
 import styles from '../styles/Home.module.css';
 
@@ -14,6 +16,7 @@ const Home: NextPage = () => {
   const { width } = useViewportSize();
   const [isMobile, setIsMobile] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showProject, setShowProjects] = useState(false);
   useEffect(() => {
     setIsMobile(width < 600 ? true : false);
   }, [width]);
@@ -28,6 +31,21 @@ const Home: NextPage = () => {
 
   const goToPDF = () => {
     window.open('https://bhapip.vercel.app/resume.pdf', '_blank');
+  };
+
+  const goToProjects = () => {
+    setShowProjects(true);
+
+    setTimeout(() => {
+      console.log(document.getElementById('projects'));
+      document
+        .getElementById('projects')
+        ?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
+    }, 200);
   };
 
   const footerOptions = () => (
@@ -76,7 +94,7 @@ const Home: NextPage = () => {
             <div className={styles.aboutMe}>BEN HAPIP</div>
             <div
               className={styles.aboutMeSection}
-              style={{ color: theme.colors.white[0] }}
+              style={{ color: theme.colors.greylol[0] }}
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industries standard dummy text
@@ -91,14 +109,18 @@ const Home: NextPage = () => {
             </div>
             {isMobile ? (
               <div className={styles.mobileButtonContainer}>
-                <Button color="lightBen">View Projects</Button>
+                <Button color="lightBen" onClick={goToProjects}>
+                  View Projects
+                </Button>
                 <div className={styles.mobileSocialContainer}>
                   {footerOptions()}
                 </div>
               </div>
             ) : (
               <div className={styles.buttonContainer}>
-                <Button color="lightBen">View Projects</Button>
+                <Button color="lightBen" onClick={goToProjects}>
+                  View Projects
+                </Button>
                 {footerOptions()}
               </div>
             )}
@@ -118,6 +140,14 @@ const Home: NextPage = () => {
 
           {showModal && <ContactModal onClose={() => setShowModal(false)} />}
         </div>
+        {showProject && (
+          <div
+            id="projects"
+            className={styles.projectContainer}
+          >
+            <PortfolioSection />
+          </div>
+        )}
       </main>
     </div>
   );
