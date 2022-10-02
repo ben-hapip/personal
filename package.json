@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
     "@mantine/carousel": "^5.4.1",

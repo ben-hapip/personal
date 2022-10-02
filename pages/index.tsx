@@ -26,9 +26,27 @@ const Home: NextPage = () => {
     window.open('https://github.com/ben-hapip', '_blank');
   };
 
-  const goToPDF = ()=> {
+  const goToPDF = () => {
     window.open('https://bhapip.vercel.app/resume.pdf', '_blank');
-  }
+  };
+
+  const footerOptions = () => (
+    <>
+      <div onClick={goToLinkedIn}>
+        <Linkedin width="34" height="34" />
+      </div>
+      <div onClick={goToGitHub}>
+        <GitHub width="34" height="34" />
+      </div>
+      <div onClick={() => setShowModal(true)}>
+        <Mail width="34" height="34" />
+      </div>
+      <div title="Download my resume" onClick={goToPDF}>
+        <FileText width="34" height="34" />
+      </div>
+    </>
+  );
+
   return (
     <div
       className={styles.container}
@@ -75,35 +93,13 @@ const Home: NextPage = () => {
               <div className={styles.mobileButtonContainer}>
                 <Button color="lightBen">View Projects</Button>
                 <div className={styles.mobileSocialContainer}>
-                <div onClick={goToLinkedIn}>
-                  <Linkedin width="34" height="34" />
+                  {footerOptions()}
                 </div>
-                <div onClick={goToGitHub}>
-                  <GitHub width="34" height="34" />
-                </div>
-                <div onClick={() => setShowModal(true)}>
-                  <Mail width="34" height="34" />
-                </div>
-                <div title="Download my resume">
-                  <FileText width="34" height="34" />
-                </div>
-              </div>
               </div>
             ) : (
               <div className={styles.buttonContainer}>
                 <Button color="lightBen">View Projects</Button>
-                <div onClick={goToLinkedIn}>
-                  <Linkedin width="34" height="34" />
-                </div>
-                <div onClick={goToGitHub}>
-                  <GitHub width="34" height="34" />
-                </div>
-                <div onClick={() => setShowModal(true)}>
-                  <Mail width="34" height="34" />
-                </div>
-                <div title="Download my resume" onClick={goToPDF}>
-                  <FileText width="34" height="34" />
-                </div>
+                {footerOptions()}
               </div>
             )}
           </div>
