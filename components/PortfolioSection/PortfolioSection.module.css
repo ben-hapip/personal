@@ -6,12 +6,12 @@
 
 .portfolioTitle {
     margin-bottom: 10px;
+    font-family: Helvetica;
 }
 
 .portfolioCard {
     cursor: pointer;
     overflow: visible;
-    font-family: 'Helvetica';
 }
 
 .portfolioCard:hover {
