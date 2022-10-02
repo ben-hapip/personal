@@ -11,6 +11,7 @@
 .portfolioCard {
     cursor: pointer;
     overflow: visible;
+    font-family: 'Helvetica';
 }
 
 .portfolioCard:hover {
