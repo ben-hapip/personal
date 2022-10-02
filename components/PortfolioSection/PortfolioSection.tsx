@@ -1,6 +1,6 @@
 import { Card, Text } from '@mantine/core';
 import Image, { StaticImageData } from 'next/image';
-import dmv from '../../public/DMV.png';
+import dmv from '../../public/dmv.png';
 import hrv from '../../public/hrv.png';
 import pattern from '../../public/pattern.png';
 import sophie from '../../public/sophie.png';
