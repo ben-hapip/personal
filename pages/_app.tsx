@@ -26,7 +26,7 @@ export default function App(props: AppProps) {
             background: ['#001914']
           },
           primaryColor: 'ben',
-          fontFamily: 'Helvetica',
+          fontFamily: 'Consolas',
         }}
       >
         <Component {...pageProps} />

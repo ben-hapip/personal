@@ -1,4 +1,4 @@
-import { Button, Card, Text } from '@mantine/core';
+import { Card, Text } from '@mantine/core';
 import Image, { StaticImageData } from 'next/image';
 import dmv from '../../public/DMV.png';
 import hrv from '../../public/hrv.png';
@@ -14,15 +14,17 @@ interface PortfolioOptions {
 export const PortfolioSection = () => {
   const portfolioOptions = [
     {
-      title: 'Heart river voice',
+      title: 'Heart River Voice',
       image: hrv,
-      description: 'Website that allows the distribution of a monthly newsletter for everyone in the Stark County area.',
+      description:
+        'Website that allows the distribution of a monthly newsletter for everyone in the Stark County area.',
       linkTo: 'https://heartrivervoice.com/',
     },
     {
       title: `Sophie's website`,
       image: sophie,
-      description: 'Personal website made for my sister to allow her to show off some of her finest graphic design work.',
+      description:
+        'Personal website made for my sister to allow her to show off some of her finest graphic design work.',
       linkTo: 'https://sophiajilekdesigns.com/',
     },
     {
@@ -50,16 +52,24 @@ export const PortfolioSection = () => {
       {portfolioOptions.map((option, index) => {
         return (
           <Card
-            shadow="sm"
+            className={styles.portfolioCard}
+            onClick={() => goToUrl(option.linkTo)}
             p="lg"
             radius="md"
-            withBorder
             key={index}
-            style={{ overflow: 'visible' }}
           >
+            <Text
+              size="xl"
+              color="greylol"
+              align="center"
+              className={styles.portfolioTitle}
+            >
+              {option.title}
+            </Text>
             <Card.Section>
               <div className={styles.portfolioImage}>
                 <Image
+                  style={{ borderRadius: 30 }}
                   src={option.image}
                   height={200}
                   width={200}
@@ -69,19 +79,14 @@ export const PortfolioSection = () => {
               </div>
             </Card.Section>
 
-            <Text size="sm" color="greylol">
+            <Text
+              size="sm"
+              color="greylol"
+              className={styles.portfolioDescription}
+              align="center"
+            >
               {option.description}
             </Text>
-
-            <Button
-              onClick={() => goToUrl(option.linkTo)}
-              color="lightBen"
-              fullWidth
-              mt="md"
-              radius="md"
-            >
-              {option.title}
-            </Button>
           </Card>
         );
       })}
